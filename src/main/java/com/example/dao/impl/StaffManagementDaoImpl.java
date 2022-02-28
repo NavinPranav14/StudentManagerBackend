@@ -2,6 +2,7 @@ package com.example.dao.impl;
 
 import com.example.dao.StaffManagementDao;
 import com.example.entity.Staff;
+import com.example.enums.UserStatus;
 import com.example.exception.MongoDbException;
 import com.example.exception.NotFoundException;
 import com.mongodb.MongoException;
@@ -25,7 +26,10 @@ public class StaffManagementDaoImpl implements StaffManagementDao{
     @Override
     public List<Staff> listStaff() throws MongoDbException {
         try {
-            return mongoTemplate.findAll(Staff.class);
+            Query query = new Query();
+            query.addCriteria(Criteria.where("status").is(UserStatus.ACTIVE.name()));
+            query.fields().exclude("password");
+            return mongoTemplate.find(query,Staff.class);
         } catch (MongoException mongoException) {
             throw new MongoDbException("Error while fetching data", mongoException);
         }
@@ -45,6 +49,7 @@ public class StaffManagementDaoImpl implements StaffManagementDao{
         try {
             Query query = new Query();
             query.addCriteria(Criteria.where("_id").is(new ObjectId(id)));
+            query.fields().exclude("password");
             return mongoTemplate.findOne(query, Staff.class);
         } catch (MongoException mongoException) {
             throw new NotFoundException("Staff not found", mongoException);

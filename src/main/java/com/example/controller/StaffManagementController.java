@@ -9,6 +9,7 @@ import com.example.service.StaffManagementService;
 import com.example.service.StudentManagementService;
 import com.example.util.JwtUtility;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -44,8 +45,9 @@ public class StaffManagementController {
         if(staffManagementService.staffAccess(staffDto)){
             response.setStatus(SUCCESS.getDisplayName());
             response.setMessage("Login success");
-            response.setData(jwtUtility.generateToken(staffDto));
-            return new ResponseEntity<APIResponse>(response, HttpStatus.OK);
+            HttpHeaders httpHeaders = new HttpHeaders();
+            httpHeaders.set("jwttoken",jwtUtility.generateToken(staffDto));
+            return new ResponseEntity<APIResponse>(response,httpHeaders, HttpStatus.OK);
         }
         else{
             response.setStatus(FAILURE.getDisplayName());

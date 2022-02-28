@@ -4,6 +4,7 @@ import com.example.dao.StudentManagementDao;
 import com.example.dao.impl.StudentManagementDaoImpl;
 import com.example.dto.StudentDto;
 import com.example.entity.Student;
+import com.example.enums.UserStatus;
 import com.example.exception.MongoDbException;
 import com.example.exception.NotFoundException;
 import com.example.exception.ServiceException;
@@ -14,10 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
-
-import static com.example.enums.UserStatus.ACTIVE;
 
 @Service
 public class StudentManagementServiceImpl implements StudentManagementService {
@@ -34,7 +32,6 @@ public class StudentManagementServiceImpl implements StudentManagementService {
     @Override
     public Boolean studentAccess(StudentDto studentDto) throws ServiceException{
         try{
-
             Student student = studentManagementDao.studentAccess(studentDto.getUsername());
             return passwordEncoder.matches(studentDto.getPassword(), student.getPassword());
         }catch(Exception e){
@@ -43,29 +40,15 @@ public class StudentManagementServiceImpl implements StudentManagementService {
     }
 
 
+
     @Override
-    public List<StudentDto> listStudent() throws ServiceException {
-        List<StudentDto> studentDtoList = new ArrayList<>();
+    public List<Student> listStudent() throws ServiceException {
         try {
             List<Student> studentList = studentManagementDao.listStudent();
-            studentList.parallelStream().forEach(student -> {
-                StudentDto studentDto = new StudentDto();
-                if(student.getStatus().equals(ACTIVE)) {
-                    studentDto.setImageURL(student.getImageURL());
-                    studentDto.setUsername(student.getUsername());
-                    studentDto.setPassword(student.getPassword());
-                    studentDto.setId(student.getId());
-                    studentDto.setRoll(student.getRoll());
-                    studentDto.setName(student.getName());
-                    studentDto.setDepartment(student.getDepartment());
-                    studentDto.setAdmissionDate(student.getAdmissionDate());
-                    studentDtoList.add(studentDto);
-                }
-            });
+            return studentList;
         } catch (MongoDbException mongoDbException) {
             throw new ServiceException("Error while processing data", mongoDbException);
         }
-        return studentDtoList;
     }
 
     @Override
@@ -73,7 +56,7 @@ public class StudentManagementServiceImpl implements StudentManagementService {
         StudentDto studentDto = new StudentDto();
         try {
             Student student = studentManagementDao.findStudentById(id);
-            if(student.getStatus().equals(ACTIVE)) {
+            if(student.getStatus().equals(UserStatus.ACTIVE.name())) {
                 studentDto.setImageURL(student.getImageURL());
                 studentDto.setId(student.getId());
                 studentDto.setUsername(student.getUsername());
@@ -93,7 +76,7 @@ public class StudentManagementServiceImpl implements StudentManagementService {
     public void addStudent(StudentDto studentDto) throws ServiceException {
         Student student = new Student();
             if((studentDto.getUsername().length() > 3 ) && (studentDto.getPassword().length() > 3) && (studentManagementDaoImpl.findStudentByUserName(studentDto.getUsername()) == null)){
-                GenerateId generate = new GenerateId();
+                com.example.service.impl.GenerateId generate = new GenerateId();
                 String encodedPassword = passwordEncoder.encode(studentDto.getPassword());
                 student.setUsername(studentDto.getUsername());
                 LocalDateTime localDateTime = LocalDateTime.now();

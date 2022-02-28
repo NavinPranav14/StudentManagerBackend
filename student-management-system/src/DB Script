@@ -1,2 +1,0 @@
-db.createCollecion("employee");
-db.employee.insert({"code" : "EMP102","name" : "Rahul","status" : "ACTIVE"})

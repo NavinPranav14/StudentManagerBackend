@@ -35,7 +35,10 @@ public class StudentManagementDaoImpl implements StudentManagementDao {
     @Override
     public List<Student> listStudent() throws MongoDbException {
         try {
-            return mongoTemplate.findAll(Student.class);
+            Query query = new Query();
+            query.addCriteria(Criteria.where("status").is("ACTIVE"));
+            query.fields().exclude("password");
+            return mongoTemplate.find(query,Student.class);
         } catch (MongoException mongoException) {
             throw new MongoDbException("Error while fetching data", mongoException);
         }
@@ -46,6 +49,7 @@ public class StudentManagementDaoImpl implements StudentManagementDao {
         try {
             Query query = new Query();
             query.addCriteria(Criteria.where("_id").is(new ObjectId(id)));
+            query.fields().exclude("password");
             return mongoTemplate.findOne(query, Student.class);
         } catch (MongoException mongoException) {
             throw new NotFoundException("Student not found", mongoException);

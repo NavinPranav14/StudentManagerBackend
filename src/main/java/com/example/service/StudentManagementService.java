@@ -1,6 +1,7 @@
 package com.example.service;
 
 import com.example.dto.StudentDto;
+import com.example.entity.Student;
 import com.example.exception.ServiceException;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +11,7 @@ public interface StudentManagementService {
 
     public Boolean studentAccess(StudentDto studentDto)throws ServiceException;
 
-    List<StudentDto> listStudent() throws ServiceException;
+    List<Student> listStudent() throws ServiceException;
 
     StudentDto findStudentById(String id) throws ServiceException;
 

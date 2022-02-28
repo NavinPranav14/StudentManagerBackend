@@ -1,7 +1,6 @@
 package com.example.service;
 
 import com.example.dto.AdminDto;
-import com.example.exception.NotFoundException;
 import com.example.exception.ServiceException;
 import org.springframework.stereotype.Service;
 
