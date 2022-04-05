@@ -7,82 +7,27 @@
     <list default="true" id="1323dd50-8a60-4ba0-bbb5-2f2b99724598" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/config/SecurityConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/AdminController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/StaffManagementController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/StudentManagementController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/response/APIResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/AdminAccessDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/StaffManagementDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/StudentManagementDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/impl/AdminAccessDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/impl/StaffManagementDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/impl/StudentManagementDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dto/AdminDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dto/StaffDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dto/StudentDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/Staff.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/enums/APIResponseStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/enums/UserStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exception/DataException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exception/ExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exception/ExceptionResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exception/MongoDbException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exception/NotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exception/ServiceException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/AdminService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/StaffManagementService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/StudentManagementService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/impl/AdminServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/impl/GenerateId.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/impl/StaffManagementServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/impl/StudentManagementServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/util/JwtUtility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/DB Script" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/config/SecurityConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/controller/AdminController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/controller/StaffManagementController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/controller/StudentManagementController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/controller/response/APIResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/dao/AdminAccessDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/dao/StaffManagementDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/dao/StudentManagementDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/dao/impl/AdminAccessDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/dao/impl/StaffManagementDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/dao/impl/StudentManagementDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/dto/AdminDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/dto/StaffDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/dto/StudentDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/entity/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/entity/Staff.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/entity/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/enums/APIResponseStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/enums/UserStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/exception/DataException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/exception/ExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/exception/ExceptionResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/exception/MongoDbException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/exception/NotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/exception/ServiceException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/service/AdminService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/service/StaffManagementService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/service/StudentManagementService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/service/impl/AdminServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/service/impl/StaffManagementServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/service/impl/StudentManagementServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/java/com/example/util/JwtUtility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-management-system/src/test/java/com/example/ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/StaffManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/StaffManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/StudentManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/StudentManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/StaffManagementDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/StaffManagementDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/StudentManagementDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/StudentManagementDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/impl/StaffManagementDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/impl/StaffManagementDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/impl/StudentManagementDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/impl/StudentManagementDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dto/StaffDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dto/StaffDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dto/StudentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dto/StudentDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/StaffManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/StaffManagementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/StudentManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/StudentManagementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/impl/AdminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/impl/StaffManagementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/impl/StaffManagementServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/impl/StudentManagementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/impl/StudentManagementServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/controller/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/StaffManagementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/controller/StaffManagementController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/StudentManagementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/controller/StudentManagementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dao/StaffManagementDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dao/StaffManagementDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dao/StudentManagementDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dao/StudentManagementDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/dao/impl/StaffManagementDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dao/impl/StaffManagementDaoImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/dao/impl/StudentManagementDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dao/impl/StudentManagementDaoImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/dto/StaffDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dto/StaffDto.class" afterDir="false" />
@@ -91,6 +36,7 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/entity/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Student.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/service/StaffManagementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/service/StaffManagementService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/service/StudentManagementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/service/StudentManagementService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/service/impl/AdminServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/service/impl/StaffManagementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/service/impl/StaffManagementServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/service/impl/StudentManagementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/service/impl/StudentManagementServiceImpl.class" afterDir="false" />
     </list>
@@ -124,6 +70,15 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/util/Collection.class" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/service/impl/AdminServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/controller/response/APIResponse.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/service/StaffManagementService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/dto/StaffDto.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/entity/Staff.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/controller/AdminController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/service/impl/StaffManagementServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -144,8 +99,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="full.screen.before.presentation.mode" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Training/Consultancy Service/Consultancy-Service" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Student-Manager" type="Application" factoryName="Application" temporary="true">
@@ -199,6 +159,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalStateException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/employee_management_system$Application.ic" NAME="Application Coverage Results" MODIFIED="1645023931399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

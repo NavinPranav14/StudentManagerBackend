@@ -27,4 +27,8 @@ public class StudentDto {
 
     private String status;
 
+    private String gender;
+
+    private String dob;
+
 }

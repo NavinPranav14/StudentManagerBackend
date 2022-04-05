@@ -13,7 +13,11 @@ public interface StudentManagementService {
 
     List<Student> listStudent() throws ServiceException;
 
+    List<Student> findStudentByName( String name ) throws ServiceException;
+
     StudentDto findStudentById(String id) throws ServiceException;
+
+    StudentDto findStudentByUsername(String username) throws ServiceException;
 
     void addStudent(StudentDto studentDto)throws  ServiceException;
 

@@ -47,9 +47,21 @@ public class StudentManagementServiceImpl implements StudentManagementService {
             List<Student> studentList = studentManagementDao.listStudent();
             return studentList;
         } catch (MongoDbException mongoDbException) {
-            throw new ServiceException("Error while processing data", mongoDbException);
+            throw new ServiceException("data not found", mongoDbException);
         }
     }
+
+
+    @Override
+    public List<Student> findStudentByName (String name) throws ServiceException {
+        try {
+            List<Student> studentList = studentManagementDao.findStudentByName(name);
+            return studentList;
+            } catch (MongoDbException mongoDbException) {
+            throw new ServiceException("Student not found", mongoDbException);
+        }
+    }
+
 
     @Override
     public StudentDto findStudentById(String id) throws ServiceException {
@@ -63,6 +75,8 @@ public class StudentManagementServiceImpl implements StudentManagementService {
                 studentDto.setPassword(student.getPassword());
                 studentDto.setRoll(student.getRoll());
                 studentDto.setName(student.getName());
+                studentDto.setGender(student.getGender());
+                studentDto.setDob(student.getDob());
                 studentDto.setDepartment(student.getDepartment());
                 studentDto.setAdmissionDate(student.getAdmissionDate());
             }
@@ -71,6 +85,32 @@ public class StudentManagementServiceImpl implements StudentManagementService {
         }
         return studentDto;
     }
+
+    @Override
+    public StudentDto findStudentByUsername (String id) throws ServiceException {
+        StudentDto studentDto = new StudentDto();
+        try {
+            Student student = studentManagementDao.findStudentByUserName(id);
+            if(student.getStatus().equals(UserStatus.ACTIVE.name())) {
+                studentDto.setImageURL(student.getImageURL());
+                studentDto.setId(student.getId());
+                studentDto.setUsername(student.getUsername());
+                studentDto.setPassword(student.getPassword());
+                studentDto.setRoll(student.getRoll());
+                studentDto.setName(student.getName());
+                studentDto.setGender(student.getGender());
+                studentDto.setDob(student.getDob());
+                studentDto.setDepartment(student.getDepartment());
+                studentDto.setAdmissionDate(student.getAdmissionDate());
+            }
+        } catch (NotFoundException notFoundException) {
+            throw new ServiceException("Student not found", notFoundException);
+        }
+        return studentDto;
+    }
+
+
+
 
     @Override
     public void addStudent(StudentDto studentDto) throws ServiceException {
@@ -87,6 +127,8 @@ public class StudentManagementServiceImpl implements StudentManagementService {
                 student.setRoll(generate.generateId("KPR"));
                 student.setAdmissionDate(dateTimeFormatter.format(localDateTime));
                 student.setDepartment(studentDto.getDepartment());
+                student.setGender(studentDto.getGender());
+                student.setDob(studentDto.getDob());
                 student.setStatus("ACTIVE");
                 try{
                     studentManagementDao.addStudent(student);
@@ -106,7 +148,10 @@ public class StudentManagementServiceImpl implements StudentManagementService {
         Student student = new Student();
         student.setName(studentDto.getName());
         student.setImageURL(studentDto.getImageURL());
+        student.setUsername(studentDto.getUsername());
         student.setDepartment(studentDto.getDepartment());
+        student.setDob(studentDto.getDob());
+        student.setGender(studentDto.getGender());
         try{
             studentManagementDao.modifyStudent(student, id);
         }catch (Exception e){

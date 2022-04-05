@@ -37,9 +37,24 @@ public class StaffManagementDaoImpl implements StaffManagementDao{
 
 
     @Override
+    public List<Staff> findStaffByName(String name) throws MongoDbException {
+        try {
+            Query query = new Query();
+            query.addCriteria(Criteria.where("name").is(name));
+            query.addCriteria(Criteria.where("status").is("ACTIVE"));
+            query.fields().exclude("password");
+            return mongoTemplate.find(query, Staff.class);
+        } catch (MongoException mongoException){
+            throw new MongoDbException("Error while fetching data", mongoException);
+        }
+    }
+
+
+    @Override
     public Staff staffAccess(String username){
 
         Query query = new Query();
+        query.addCriteria(Criteria.where("status").is(UserStatus.ACTIVE.name()));
         query.addCriteria(Criteria.where("username").is(username));
         return mongoTemplate.findOne(query, Staff.class);
     }
@@ -59,6 +74,7 @@ public class StaffManagementDaoImpl implements StaffManagementDao{
     @Override
     public Staff findStaffByUserName(String username) {
         Query query = new Query();
+        query.addCriteria(Criteria.where("status").is(UserStatus.ACTIVE.name()));
         query.addCriteria(Criteria.where("username").is(username));
         return mongoTemplate.findOne(query, Staff.class);
     }
@@ -67,7 +83,6 @@ public class StaffManagementDaoImpl implements StaffManagementDao{
     public void addStaff(Staff staff) {
 
         mongoTemplate.insert(staff);
-        return;
     }
 
     @Override
@@ -78,8 +93,6 @@ public class StaffManagementDaoImpl implements StaffManagementDao{
         mongoTemplate.getConverter().write(staff, doc);
         Update update = Update.fromDocument(doc);
         mongoTemplate.findAndModify(query, update, Staff.class);
-        return;
-
     }
 
     @Override

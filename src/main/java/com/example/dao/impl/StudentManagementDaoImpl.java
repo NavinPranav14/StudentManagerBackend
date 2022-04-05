@@ -8,6 +8,7 @@ import com.example.exception.NotFoundException;
 import com.mongodb.MongoException;
 import org.bson.Document;
 import org.bson.types.ObjectId;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -45,6 +46,21 @@ public class StudentManagementDaoImpl implements StudentManagementDao {
     }
 
     @Override
+    public List<Student> findStudentByName(String name) throws MongoDbException{
+        try{
+            Query query = new Query();
+            query.addCriteria(Criteria.where("name").is(name));
+            query.addCriteria(Criteria.where("status").is("ACTIVE"));
+            query.fields().exclude("password");
+            return mongoTemplate.find(query, Student.class);
+        }catch(MongoException mongoException){
+            throw new MongoDbException("Error while fetching data", mongoException);
+        }
+
+
+    }
+
+    @Override
     public Student findStudentById(String id) throws NotFoundException {
         try {
             Query query = new Query();
@@ -59,9 +75,13 @@ public class StudentManagementDaoImpl implements StudentManagementDao {
     @Override
     public Student findStudentByUserName(String username) {
         Query query = new Query();
+        query.addCriteria(Criteria.where("status").is("ACTIVE"));
         query.addCriteria(Criteria.where("username").is(username));
+        query.fields().exclude("password");
         return mongoTemplate.findOne(query, Student.class);
     }
+
+
 
     @Override
     public void addStudent(Student student)  {
@@ -89,7 +109,7 @@ public class StudentManagementDaoImpl implements StudentManagementDao {
             Query query1 = new Query(Criteria.where("_id").is(new ObjectId(id)));
             Update update1 = new Update();
             update1.set("status", DEACTIVE);
-            mongoTemplate.updateFirst(query1, update1, Staff.class);
+            mongoTemplate.updateFirst(query1, update1, Student.class);
         }
         catch (MongoException mongoException) {
             throw  new NotFoundException("Student with this id doesn't exists",mongoException);

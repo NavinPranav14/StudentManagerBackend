@@ -14,6 +14,8 @@ public interface StaffManagementService {
 
     List<Staff> listStaff() throws ServiceException;
 
+    List<Staff> findStaffByName(String name) throws ServiceException;
+
     StaffDto findStaffById(String id) throws ServiceException;
 
     void addStaff(StaffDto staffDto)throws  ServiceException;
@@ -22,6 +24,6 @@ public interface StaffManagementService {
 
     void deleteStaff(String id) throws  ServiceException;
 
-
+    StaffDto findStaffByUsername(String username) throws ServiceException;
 
 }

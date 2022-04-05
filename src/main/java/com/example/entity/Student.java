@@ -51,4 +51,10 @@ public class Student {
     @Field("status")
     private String status;
 
+    @Field("gender")
+    private String gender;
+
+    @Field("dob")
+    private String dob;
+
 }

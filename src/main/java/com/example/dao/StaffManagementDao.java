@@ -10,7 +10,9 @@ public interface StaffManagementDao {
 
     Staff staffAccess(String username);
 
-    public Staff findStaffByUserName(String username);
+    Staff findStaffByUserName(String username) throws NotFoundException;
+
+    List<Staff> findStaffByName(String name) throws MongoDbException;
 
     List<Staff> listStaff() throws MongoDbException;
 

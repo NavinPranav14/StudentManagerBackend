@@ -45,7 +45,17 @@ public class Staff {
     @Field("staffID")
     private String staffID;
 
+    @Field("phone")
+    @Size(min = 10)
+    private String phone;
+
     @Field("status")
     private String status;
+
+    @Field("gender")
+    private String gender;
+
+        @Field("dob")
+    private String dob;
 
 }

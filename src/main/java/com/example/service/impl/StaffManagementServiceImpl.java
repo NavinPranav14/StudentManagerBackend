@@ -32,7 +32,7 @@ public class StaffManagementServiceImpl implements StaffManagementService {
             Staff staff = staffManagementDao.staffAccess(staffDto.getUsername());
             return passwordEncoder.matches(staffDto.getPassword(), staff.getPassword());
         }catch (Exception e){
-            throw new ServiceException("Error while processing data");
+            throw new ServiceException("Username or password is incorrect");
 
         }
     }
@@ -43,9 +43,24 @@ public class StaffManagementServiceImpl implements StaffManagementService {
             List<Staff> staffList = staffManagementDao.listStaff();
             return staffList;
         } catch (MongoDbException mongoDbException) {
-            throw new ServiceException("Error while processing data", mongoDbException);
+            throw new ServiceException("data not found", mongoDbException);
         }
     }
+
+    @Override
+    public List<Staff> findStaffByName(String name) throws ServiceException {
+        try {
+
+            List<Staff> staffList = staffManagementDao.findStaffByName(name);
+
+                return staffList;
+
+        } catch (MongoDbException mongoDbException) {
+            throw new ServiceException("user not found", mongoDbException);
+        }
+    }
+
+
 
     @Override
     public StaffDto findStaffById(String id) throws ServiceException {
@@ -59,6 +74,9 @@ public class StaffManagementServiceImpl implements StaffManagementService {
                 staffDto.setDepartment(staff.getDepartment());
                 staffDto.setStaffID(staff.getStaffID());
                 staffDto.setUsername(staff.getUsername());
+                staffDto.setPhone(staff.getPhone());
+                staffDto.setGender(staff.getGender());
+                staffDto.setDob(staff.getDob());
                 staffDto.setPassword(staff.getPassword());
             }
         } catch (NotFoundException notFoundException) {
@@ -66,6 +84,30 @@ public class StaffManagementServiceImpl implements StaffManagementService {
         }
         return staffDto;
     }
+
+    @Override
+    public StaffDto findStaffByUsername(String username) throws ServiceException {
+        StaffDto staffDto = new StaffDto();
+        try {
+            Staff staff = staffManagementDao.findStaffByUserName(username);
+            if(staff.getStatus().equals(UserStatus.ACTIVE.name())) {
+                staffDto.setImageURL(staff.getImageURL());
+                staffDto.setId(staff.getId());
+                staffDto.setName(staff.getName());
+                staffDto.setDepartment(staff.getDepartment());
+                staffDto.setStaffID(staff.getStaffID());
+                staffDto.setUsername(staff.getUsername());
+                staffDto.setPhone(staff.getPhone());
+                staffDto.setGender(staff.getGender());
+                staffDto.setDob(staff.getDob());
+                staffDto.setPassword(staff.getPassword());
+            }
+        } catch (Exception e) {
+            throw new ServiceException("Staff not found", e);
+        }
+        return staffDto;
+    }
+
 
     @Override
     public void addStaff(StaffDto staffDto) throws ServiceException {
@@ -81,6 +123,9 @@ public class StaffManagementServiceImpl implements StaffManagementService {
                 staff.setUsername(staffDto.getUsername());
                 staff.setImageURL(staffDto.getImageURL());
                 staff.setPassword(encodedPassword);
+                staff.setPhone(staffDto.getPhone());
+                staff.setGender(staffDto.getGender());
+                staff.setDob(staffDto.getDob());
                 staff.setStatus("ACTIVE");
                 try{
                     staffManagementDao.addStaff(staff);
@@ -98,8 +143,13 @@ public class StaffManagementServiceImpl implements StaffManagementService {
         Staff staff = new Staff();
         staff.setName(staffDto.getName());
         staff.setDepartment(staffDto.getDepartment());
+        staff.setUsername(staffDto.getUsername());
         staff.setId(staffDto.getId());
         staff.setImageURL(staffDto.getImageURL());
+        staff.setPhone(staffDto.getPhone());
+        staff.setDob(staffDto.getDob());
+        staff.setGender(staffDto.getGender());
+
         try{
             staffManagementDao.modifyStaff(staff, id);
         }catch (Exception e){

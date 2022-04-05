@@ -26,6 +26,7 @@ public class StudentManagementController {
     @Autowired
     private JwtUtility jwtUtility;
 
+
     public Boolean getStaffJwtUtility( String auth) throws NotFoundException {
         return jwtUtility.validateAdminToken(auth) != null;
     }
@@ -62,6 +63,21 @@ public class StudentManagementController {
             return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @GetMapping("name/{name}")
+    public ResponseEntity<APIResponse> findStudentByName( @PathVariable String name ) throws ServiceException{
+        APIResponse response = new APIResponse();
+        if(studentManagementService.findStudentByName(name) != null){
+            response.setData(studentManagementService.findStudentByName(name));
+            response.setStatus(SUCCESS.getDisplayName());
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        }
+        else{
+            response.setStatus(FAILURE.getDisplayName());
+            response.setMessage("Id not found");
+            return new ResponseEntity<APIResponse>(response, HttpStatus.NOT_FOUND);
+        }
+    }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<APIResponse> findStudentById(@PathVariable String id)
@@ -78,6 +94,23 @@ public class StudentManagementController {
             return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
         }
     }
+
+    @GetMapping("username/{username}")
+    public ResponseEntity<APIResponse> findStudentByUsername( @PathVariable String username ) throws ServiceException{
+        APIResponse response = new APIResponse();
+        if(studentManagementService.findStudentByUsername(username) != null){
+            response.setData(studentManagementService.findStudentByUsername(username));
+            response.setStatus(SUCCESS.getDisplayName());
+            return new ResponseEntity<>(response, HttpStatus.OK);
+
+        }
+        else{
+            response.setStatus(FAILURE.getDisplayName());
+            response.setMessage("Id not found");
+            return new ResponseEntity<APIResponse>(response, HttpStatus.NOT_FOUND);
+        }
+    }
+
 
     @PostMapping("/create")
     public ResponseEntity<APIResponse> addStudent(@Valid @RequestHeader(value = "authorization") String auth, @RequestBody StudentDto studentDto)

@@ -8,7 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="StudentManagerBackend" />
-        <module name="employee_management_system" />
         <module name="student-management-system" />
       </profile>
     </annotationProcessing>
@@ -16,7 +15,6 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="StudentManagerBackend" options="-parameters" />
-      <module name="employee_management_system" options="-parameters" />
       <module name="student-management-system" options="-parameters" />
     </option>
   </component>

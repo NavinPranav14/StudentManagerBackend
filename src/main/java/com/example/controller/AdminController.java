@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +26,7 @@ public class AdminController {
     @Autowired
     private JwtUtility jwtUtility;
 
+
     @PostMapping("/admin/login")
     public ResponseEntity<APIResponse> getAdminAccess(@RequestBody AdminDto adminDto) throws ServiceException {
         APIResponse response = new APIResponse();
@@ -39,7 +41,7 @@ public class AdminController {
             else{
                 response.setStatus(FAILURE.getDisplayName());
                 response.setMessage("Login failed");
-                return new ResponseEntity<APIResponse>(response, HttpStatus.OK);
+                return new ResponseEntity<APIResponse>(response, HttpStatus.BAD_REQUEST);
             }
 
 
