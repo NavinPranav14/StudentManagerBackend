@@ -48,12 +48,63 @@ public class StaffManagementController {
             response.setStatus(SUCCESS.getDisplayName());
             response.setMessage("Login success");
             HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.set("jwttoken",jwtUtility.generateToken(staffDto));
+            httpHeaders.set("jwttoken",jwtUtility.generateToken(staffDto, 60*10*10));
             return new ResponseEntity<APIResponse>(response,httpHeaders, HttpStatus.OK);
         }
         else{
             response.setStatus(FAILURE.getDisplayName());
             response.setMessage("Login failed");
+            return new ResponseEntity<APIResponse>(response, HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("username/{username}")
+    public ResponseEntity<APIResponse> findStaffByUsername( @PathVariable String username ) throws ServiceException{
+        APIResponse response = new APIResponse();
+        if(staffManagementService.findStaffByUsername(username) != null){
+            response.setData(staffManagementService.findStaffByUsername(username));
+            response.setStatus(SUCCESS.getDisplayName());
+            return new ResponseEntity<APIResponse>(response, HttpStatus.OK);
+
+        }
+        else{
+            response.setStatus(FAILURE.getDisplayName());
+            response.setMessage("Id not found");
+            return new ResponseEntity<APIResponse>(response, HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("forgot-password/username/{username}")
+    public ResponseEntity<APIResponse> findStaffForPassword( @PathVariable String username ) throws ServiceException{
+        APIResponse response = new APIResponse();
+        if(staffManagementService.findStaffByUsername(username) != null){
+
+            response.setStatus(SUCCESS.getDisplayName());
+            HttpHeaders httpHeaders = new HttpHeaders();
+            String generated = jwtUtility.generateToken(username, 5*60);
+            httpHeaders.set("jwttoken",generated);
+            response.setData(staffManagementService.findStaffForPassword(username, generated));
+            return new ResponseEntity<APIResponse>(response,httpHeaders, HttpStatus.OK);
+        }
+        else{
+            response.setStatus(FAILURE.getDisplayName());
+            response.setMessage("Id not found");
+            return new ResponseEntity<APIResponse>(response, HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PutMapping("reset-password/jwt/{jwt}")
+    public ResponseEntity<APIResponse> findStaffForResetPassword( @PathVariable String jwt, @RequestBody String password ) throws ServiceException{
+        APIResponse response = new APIResponse();
+        if(jwtUtility.validateResetStaffPassword(jwt)){
+            System.out.println("inside");
+            staffManagementService.changeStaffPassword(jwt, password);
+            response.setStatus(SUCCESS.getDisplayName());
+            return new ResponseEntity<APIResponse>(response, HttpStatus.OK);
+        }
+        else{
+            response.setStatus(FAILURE.getDisplayName());
+            response.setMessage("Id not found");
             return new ResponseEntity<APIResponse>(response, HttpStatus.NOT_FOUND);
         }
     }
@@ -99,26 +150,6 @@ public class StaffManagementController {
         }
         }
 
-        @GetMapping("username/{username}")
-        public ResponseEntity<APIResponse> findStaffByUsername( @PathVariable String username ) throws ServiceException{
-        APIResponse response = new APIResponse();
-            if(staffManagementService.findStaffByUsername(username) != null){
-                response.setData(staffManagementService.findStaffByUsername(username));
-                response.setStatus(SUCCESS.getDisplayName());
-                return new ResponseEntity<>(response, HttpStatus.OK);
-
-            }
-            else{
-                response.setStatus(FAILURE.getDisplayName());
-                response.setMessage("Id not found");
-                return new ResponseEntity<APIResponse>(response, HttpStatus.NOT_FOUND);
-            }
-        }
-
-
-
-
-
     @PostMapping("/create")
     public ResponseEntity<APIResponse> addStaff(@RequestHeader(value = "authorization") String auth,@Valid @RequestBody StaffDto staffDto) throws ServiceException, NotFoundException {
         APIResponse response = new APIResponse();
@@ -160,8 +191,6 @@ public class StaffManagementController {
             } else{
                 response.setStatus(FAILURE.getDisplayName());
             return new ResponseEntity<APIResponse>(response,HttpStatus.BAD_REQUEST);
-
-//                throw new ServiceException("Access denied");
         }
     }
 }

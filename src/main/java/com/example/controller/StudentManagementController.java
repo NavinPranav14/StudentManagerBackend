@@ -39,11 +39,10 @@ public class StudentManagementController {
     public ResponseEntity<APIResponse> getStudentAccess(@RequestBody StudentDto studentDto) throws ServiceException {
         APIResponse response = new APIResponse();
         if(studentManagementService.studentAccess(studentDto)){
-            System.out.println("inside if");
             response.setStatus(SUCCESS.getDisplayName());
             response.setMessage("Login success");
             HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.set("jwttoken",jwtUtility.generateToken(studentDto));
+            httpHeaders.set("jwttoken",jwtUtility.generateToken(studentDto, 10*60*60));
             return new ResponseEntity<APIResponse>(response,httpHeaders, HttpStatus.OK);
         }
         else{
@@ -122,7 +121,6 @@ public class StudentManagementController {
             return new ResponseEntity<APIResponse>(response, HttpStatus.OK);
         }
         else{
-
             response.setStatus(FAILURE.getDisplayName());
             response.setMessage("Access denied");
             return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);

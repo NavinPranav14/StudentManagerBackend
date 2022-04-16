@@ -18,14 +18,14 @@ public class APIResponse {
 
     public APIResponse() {
     }
-
-    public APIResponse(String message, Object data) {
-        this.message = message;
-        this.data = data;
-    }
-
-    public APIResponse(String status, String message) {
-        this.status = status;
-        this.message = message;
-    }
+//
+//    public APIResponse(String message, Object data) {
+//        this.message = message;
+//        this.data = data;
+//    }
+//
+//    public APIResponse(String status, String message) {
+//        this.status = status;
+//        this.message = message;
+//    }
 }

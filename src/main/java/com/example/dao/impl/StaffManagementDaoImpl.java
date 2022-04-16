@@ -107,4 +107,17 @@ public class StaffManagementDaoImpl implements StaffManagementDao{
             throw  new NotFoundException("Staff with this id doesn't exists",mongoException);
         }
     }
+
+    @Override
+    public void resetStaffPassword(String id, String password) throws NotFoundException {
+        try{
+            Query query1 = new Query(Criteria.where("_id").is(new ObjectId(id)));
+            Update update1 = new Update();
+            update1.set("password", password);
+            mongoTemplate.updateFirst(query1, update1, Staff.class);
+        }
+        catch (MongoException mongoException) {
+            throw  new NotFoundException("Staff with this id doesn't exists",mongoException);
+        }
+    }
 }

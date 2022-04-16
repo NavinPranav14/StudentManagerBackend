@@ -23,5 +23,7 @@ public interface StaffManagementDao {
     void modifyStaff(Staff staff, String id);
 
     void deleteStaff(String id) throws NotFoundException;
+
+    void resetStaffPassword(String id, String password) throws NotFoundException;
 }
 

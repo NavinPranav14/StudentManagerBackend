@@ -26,4 +26,8 @@ public interface StaffManagementService {
 
     StaffDto findStaffByUsername(String username) throws ServiceException;
 
+    StaffDto findStaffForPassword(String username, String generated) throws ServiceException;
+
+    void changeStaffPassword(String jwt, String password) throws ServiceException;
+
 }

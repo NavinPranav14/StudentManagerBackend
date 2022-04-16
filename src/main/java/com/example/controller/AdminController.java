@@ -35,7 +35,7 @@ public class AdminController {
                 response.setStatus(SUCCESS.getDisplayName());
                 response.setMessage("Login success");
                 HttpHeaders httpHeaders = new HttpHeaders();
-                httpHeaders.set("jwttoken",jwtUtility.generateToken(adminDto));
+                httpHeaders.set("jwttoken",jwtUtility.generateToken(adminDto, 10*60*60));
                 return new ResponseEntity<APIResponse>(response,httpHeaders, HttpStatus.OK);
             }
             else{

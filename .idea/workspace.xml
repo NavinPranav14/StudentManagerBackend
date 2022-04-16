@@ -5,40 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1323dd50-8a60-4ba0-bbb5-2f2b99724598" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/StaffManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/StaffManagementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/StudentManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/StudentManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/response/APIResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/response/APIResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/StaffManagementDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/StaffManagementDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/StudentManagementDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/StudentManagementDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/impl/StaffManagementDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/impl/StaffManagementDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/impl/StudentManagementDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/impl/StudentManagementDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dto/StaffDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dto/StaffDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dto/StudentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dto/StudentDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/Staff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/StaffManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/StaffManagementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/StudentManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/StudentManagementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/impl/AdminServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/impl/StaffManagementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/impl/StaffManagementServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/impl/StudentManagementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/impl/StudentManagementServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/util/JwtUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/util/JwtUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/controller/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/StaffManagementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/controller/StaffManagementController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/StudentManagementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/controller/StudentManagementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/response/APIResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/controller/response/APIResponse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/dao/StaffManagementDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dao/StaffManagementDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dao/StudentManagementDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dao/StudentManagementDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/dao/impl/StaffManagementDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dao/impl/StaffManagementDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dao/impl/StudentManagementDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dao/impl/StudentManagementDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dto/StaffDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dto/StaffDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dto/StudentDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dto/StudentDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/entity/Staff.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Staff.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/entity/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Student.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/service/StaffManagementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/service/StaffManagementService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/service/StudentManagementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/service/StudentManagementService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/service/impl/AdminServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/service/impl/StaffManagementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/service/impl/StaffManagementServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/service/impl/StudentManagementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/service/impl/StudentManagementServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/util/JwtUtility.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/util/JwtUtility.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +41,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -99,8 +88,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="full.screen.before.presentation.mode" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Training/Consultancy Service/Consultancy-Service" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -167,6 +159,11 @@
           <properties class="java.lang.IllegalStateException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/dao/impl/StaffManagementDaoImpl.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
